@@ -60,25 +60,25 @@ MikroTik [научился](https://help.mikrotik.com/docs/spaces/ROS/pages/2555
 /ip firewall filter add action=accept chain=input dst-port=80 protocol=tcp src-address-list=acme comment="[ROS] ACME"
 ```
 
-- Включить сервис `WWW`:
+- Включить сервис `www`:
 
 ```
 /ip service enable www
 ``` 
 
-- Добавить адрес `0.0.0.0/0` в адрес-лист `acme` на 2 минуты:
+- Добавить адрес `0.0.0.0/0` в адрес-лист `acme` на время `00:01:10`:
 
 ```
-/ip firewall address-list add list=acme address=0.0.0.0/0 timeout=00:02:00 comment="[ROS] ACME running..."
+/ip firewall address-list add list=acme address=0.0.0.0/0 timeout=00:01:10 comment="[ROS] ACME running..."
 ```
 
-- Запустить получение сертификата для домена `sub.example.org`:
+- Запустить получение сертификата для домена `example.org`:
 
 ```
-/certificate enable-ssl-certificate dns-name=sub.example.org
+/certificate enable-ssl-certificate dns-name=example.org
 ```
 
-- Отключить сервис `WWW`:
+- Отключить сервис `www`:
 
 ```
 /ip service disable www
@@ -86,23 +86,4 @@ MikroTik [научился](https://help.mikrotik.com/docs/spaces/ROS/pages/2555
 
 ## Скрипт
 
-Сертификат получен, но по условиям Let's Encrypt, его необходимо продлевать каждые 90 дней. Этим занимается специальный скрип, который будет контролировать количество дней до истечения действия сертификата и перезапускать задачу на получения нового.
-
-### Приложение
-
 {{< file "ros.acme.rsc" >}}
-
-#### Параметры
-
-- `crtApi` - ссылка на ACME API. Принимает следующие значения:
-  - `https://acme-staging-v02.api.letsencrypt.org/directory` - API для тестирования заказа сертификата.
-  - `https://acme-v02.api.letsencrypt.org/directory` - основное API для заказа сертификата.
-- `crtDays` - количество дней до окончания срока действия сертификата.
-
-### Установка
-
-После настройки скрипта, его нужно добавить в репозиторий скриптов {{< tag "RouterOS" >}}. Находится репозиторий в System / Scripts. При добавлении скрипта, необходимо выбрать политики `read`, `write`, `test`.
-
-### Планировщик
-
-Скрипт должен переодически запускаться для проверки сертификатов. В этом поможет планировщик {{< tag "RouterOS" >}}. Заходим в System / Scheduler и создаём задачу с политиками `read`, `write`, `test`. В поле **On Event** вписываем точное название скрипта, ранее добавленного в репозиторий {{< tag "RouterOS" >}}.
