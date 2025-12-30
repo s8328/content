@@ -13,7 +13,7 @@
 :local wanInterface "ether1"
 :local crtCheck "no"
 :local cfToken ""
-:local cfDomain "sub.example.org"
+:local cfDomain "example.org"
 :local cfZoneID ""
 :local cfDnsID ""
 :local cfRecordType "A"
@@ -26,7 +26,6 @@
 :local cfAPIHeader "Authorization: Bearer $cfToken, Content-Type: application/json"
 :local cfAPIData "{\"type\":\"$cfRecordType\",\"name\":\"$cfDomain\",\"content\":\"$srcIP\"}"
 
-# Write debug info to log.
 :if ($cfDebug) do={
   :log info ("CloudFlare: Domain = $cfDomain")
   :log info ("CloudFlare: Domain IP (dstIP) = $dstIP")
@@ -34,7 +33,6 @@
   :log info ("CloudFlare: CloudFlare API (cfAPI) = $cfAPI&content=$srcIP")
 }
 
-# Compare and update CF if necessary.
 :if ($dstIP != $srcIP) do={
   :log info ("CloudFlare: Updating $cfDomain, setting $srcIP = $cfDomain")
   /tool fetch mode=https http-method=put \
