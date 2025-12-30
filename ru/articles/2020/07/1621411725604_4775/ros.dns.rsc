@@ -38,7 +38,7 @@
 }
 
 :if ($dstIP != $srcIP) do={
-  :log info ("CloudFlare: Updating $cfDomain ($srcIP)")
+  :log info ("CloudFlare: $cfDomain ($dstIP => $srcIP)")
   /tool fetch mode=https http-method=put \
     http-header-field="$cfAPIHeader" \
     http-data="$cfAPIData" url="$cfAPI" \
