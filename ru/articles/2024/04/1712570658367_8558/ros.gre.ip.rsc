@@ -31,6 +31,6 @@
 
   :if ($greRemoteAddrNew != $greRemoteAddrOld) do={
     /interface gre set $i remote-address=$greRemoteAddrNew
-    :log info ("GRE: Updating remote address ($greHost) from $greRemoteAddrOld to $greRemoteAddrNew.")
+    :log info ("GRE: $greHost ($greRemoteAddrOld => $greRemoteAddrNew)")
   }
 }
