@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------------------------------------------- #
-# MIKROTIK: CLOUDFLARE DNS
+# CLOUDFLARE DNS
 # -------------------------------------------------------------------------------------------------------------------- #
 # @package    RouterOS
 # @author     Kai Kimera <mail@kaikim.ru>
@@ -19,6 +19,10 @@
 :local cfRecordType "A"
 :local cfDebug 0
 
+# -------------------------------------------------------------------------------------------------------------------- #
+# -----------------------------------------------------< SCRIPT >----------------------------------------------------- #
+# -------------------------------------------------------------------------------------------------------------------- #
+
 :local srcIP [/ip address get [find interface=$wanInterface] address]
 :set srcIP [:pick $srcIP 0 [:find $srcIP "/"]]
 :local dstIP [:resolve $cfDomain]
@@ -34,7 +38,7 @@
 }
 
 :if ($dstIP != $srcIP) do={
-  :log info ("CloudFlare: Updating $cfDomain ($srcIP).")
+  :log info ("CloudFlare: Updating $cfDomain ($srcIP)")
   /tool fetch mode=https http-method=put \
     http-header-field="$cfAPIHeader" \
     http-data="$cfAPIData" url="$cfAPI" \
