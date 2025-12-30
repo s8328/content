@@ -21,5 +21,5 @@
   /ip service enable www
   /certificate enable-ssl-certificate dns-name=$domain; :delay 60s
   /ip service disable www
-  :log info "ACME: SSL certificate updated!"
-} on-error={ :log error "ACME: Failed to update SSL certificate!" }
+  :log info "ACME: SSL certificate ($domain) updated!"
+} on-error={ :log error "ACME: Failed to update SSL certificate ($domain)!" }
