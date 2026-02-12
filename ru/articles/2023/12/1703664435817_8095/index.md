@@ -47,13 +47,13 @@ draft: 0
 
 ## Установка набора сертификатов
 
-Для работы DoH необходимо наличие сертификатов в базе MikroTik. Пакет сертификатов я беру с сайта `curl.se`:
+- Скачать пакет сертификатов с сайта `curl.se`:
 
 ```text
 /tool fetch url="https://curl.se/ca/cacert.pem" dst-path="ros.cacert.pem"
 ```
 
-Импортируем сертификаты:
+- Импортировать сертификаты:
 
 ```text
 /certificate import file-name="ros.cacert.pem" passphrase="" name="CA"
@@ -65,36 +65,60 @@ draft: 0
 
 ### Стандартные DNS
 
+- Стандартные DNS CloudFlare:
+
 ```text
-/ip dns set allow-remote-requests=yes servers=1.1.1.1,1.0.0.1 use-doh-server="https://cloudflare-dns.com/dns-query" verify-doh-cert=yes
+/ip dns set allow-remote-requests=yes servers=1.1.1.1,8.8.8.8,77.88.8.8 use-doh-server="https://cloudflare-dns.com/dns-query" verify-doh-cert=yes
 ```
 
-В этой команде присутствуют следующие параметры:
+- Стандартные DNS Google:
 
-- DNS 01: `1.1.1.1`.
-- DNS 02: `1.0.0.1`.
-- Сервер DoH: `https://cloudflare-dns.com/dns-query`.
+```text
+/ip dns set allow-remote-requests=yes servers=1.1.1.1,8.8.8.8,77.88.8.8 use-doh-server="https://dns.google/dns-query" verify-doh-cert=yes
+```
+
+- Стандартные DNS Quad9:
+
+```text
+/ip dns set allow-remote-requests=yes servers=1.1.1.1,8.8.8.8,77.88.8.8 use-doh-server="https://dns10.quad9.net/dns-query" verify-doh-cert=yes
+```
+
+- Стандартные DNS OpenDNS:
+
+```text
+/ip dns set allow-remote-requests=yes servers=1.1.1.1,8.8.8.8,77.88.8.8 use-doh-server="https://doh.opendns.com/dns-query" verify-doh-cert=yes
+```
 
 ### DNS с блокировкой вредоносного ПО
 
+- Безопасные DNS CloudFlare:
+
 ```text
-/ip dns set allow-remote-requests=yes servers=1.1.1.2,1.0.0.2 use-doh-server="https://security.cloudflare-dns.com/dns-query" verify-doh-cert=yes
+/ip dns set allow-remote-requests=yes servers=1.1.1.1,8.8.8.8,77.88.8.8 use-doh-server="https://security.cloudflare-dns.com/dns-query" verify-doh-cert=yes
 ```
 
-В этой команде присутствуют следующие параметры:
+- Безопасные DNS Quad9 (Recommended):
 
-- DNS 01: `1.1.1.2`.
-- DNS 02: `1.0.0.2`.
-- Сервер DoH: `https://security.cloudflare-dns.com/dns-query`.
+```text
+/ip dns set allow-remote-requests=yes servers=1.1.1.1,8.8.8.8,77.88.8.8 use-doh-server="https://dns.quad9.net/dns-query" verify-doh-cert=yes
+```
+
+- Безопасные DNS Quad9 (Secured):
+
+```text
+/ip dns set allow-remote-requests=yes servers=1.1.1.1,8.8.8.8,77.88.8.8 use-doh-server="https://dns9.quad9.net/dns-query" verify-doh-cert=yes
+```
+
+- Безопасные DNS Quad9 (Secured w/ ECS support):
+
+```text
+/ip dns set allow-remote-requests=yes servers=1.1.1.1,8.8.8.8,77.88.8.8 use-doh-server="https://dns11.quad9.net/dns-query" verify-doh-cert=yes
+```
 
 ### DNS с блокировкой вредоносного ПО и контента для взрослых
 
+- Семейные DNS CloudFlare:
+
 ```text
-/ip dns set allow-remote-requests=yes servers=1.1.1.3,1.0.0.3 use-doh-server="https://family.cloudflare-dns.com/dns-query" verify-doh-cert=yes
+/ip dns set allow-remote-requests=yes servers=1.1.1.1,8.8.8.8,77.88.8.8 use-doh-server="https://family.cloudflare-dns.com/dns-query" verify-doh-cert=yes
 ```
-
-В этой команде присутствуют следующие параметры:
-
-- DNS 01: `1.1.1.3`.
-- DNS 02: `1.0.0.3`.
-- Сервер DoH: `https://family.cloudflare-dns.com/dns-query`.
