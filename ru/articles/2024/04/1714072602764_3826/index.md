@@ -7,8 +7,8 @@ title: 'Cisco: Базовая настройка'
 description: ''
 icon: 'far fa-file-lines'
 categories:
+  - 'cisco'
   - 'inDev'
-  - 'network'
 tags:
   - 'cisco'
   - 'ios'

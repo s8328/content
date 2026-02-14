@@ -7,7 +7,7 @@ title: 'MikroTik: Туннель WireGuard (Site-to-Site) + OSPF'
 description: ''
 icon: 'far fa-file-lines'
 categories:
-  - 'network'
+  - 'mikrotik'
   - 'scripts'
 tags:
   - 'mikrotik'

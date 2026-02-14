@@ -9,10 +9,8 @@ icon: 'far fa-file-lines'
 cover:
   crop: 'bottom'
 categories:
-  - 'network'
-  - 'security'
+  - 'mikrotik'
 tags:
-  - 'router'
   - 'mikrotik'
   - 'routeros'
 authors:

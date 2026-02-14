@@ -7,8 +7,7 @@ title: 'Cisco: Обновление IOS'
 description: ''
 icon: 'far fa-file-lines'
 categories:
-  - 'network'
-  - 'terminal'
+  - 'cisco'
 tags:
   - 'cisco'
   - 'ios'

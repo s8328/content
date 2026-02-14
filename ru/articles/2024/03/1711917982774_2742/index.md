@@ -7,7 +7,7 @@ title: 'MikroTik: Туннель IPsec (Site-to-Site)'
 description: ''
 icon: 'far fa-file-lines'
 categories:
-  - 'network'
+  - 'mikrotik'
   - 'scripts'
 tags:
   - 'mikrotik'

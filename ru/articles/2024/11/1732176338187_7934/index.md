@@ -7,9 +7,8 @@ title: "MikroTik: Сертификат Let's Encrypt"
 description: ''
 icon: 'far fa-file-lines'
 categories:
-  - 'scripts'
-  - 'network'
-  - 'security'
+- 'mikrotik'
+- 'scripts'
 tags:
   - 'mikrotik'
   - 'routeros'

@@ -7,8 +7,7 @@ title: 'MikroTik: Настройка DoH'
 description: ''
 icon: 'far fa-file-lines'
 categories:
-  - 'network'
-  - 'security'
+  - 'mikrotik'
 tags:
   - 'mikrotik'
   - 'doh'

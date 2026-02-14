@@ -7,7 +7,7 @@ title: 'MikroTik: Базовая настройка'
 description: ''
 icon: 'far fa-file-lines'
 categories:
-  - 'network'
+  - 'mikrotik'
   - 'scripts'
   - 'inDev'
 tags:

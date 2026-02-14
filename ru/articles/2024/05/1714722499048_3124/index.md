@@ -7,7 +7,7 @@ title: 'Cisco: Туннель GRE/IPsec (Site-to-Site) + OSPF'
 description: ''
 icon: 'far fa-file-lines'
 categories:
-  - 'network'
+  - 'cisco'
   - 'inDev'
 tags:
   - 'cisco'

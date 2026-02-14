@@ -7,8 +7,7 @@ title: 'Cisco: Установка лицензий'
 description: ''
 icon: 'far fa-file-lines'
 categories:
-  - 'network'
-  - 'terminal'
+  - 'cisco'
 tags:
   - 'cisco'
   - 'license'

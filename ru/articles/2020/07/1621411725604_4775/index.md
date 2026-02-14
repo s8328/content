@@ -9,7 +9,7 @@ icon: 'far fa-file-lines'
 cover:
   crop: 'bottom'
 categories:
-  - 'network'
+  - 'mikrotik'
   - 'scripts'
 tags:
   - 'router'

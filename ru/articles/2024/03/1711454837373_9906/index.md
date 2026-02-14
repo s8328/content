@@ -7,8 +7,7 @@ title: 'Cisco: Сброс пароля'
 description: ''
 icon: 'far fa-file-lines'
 categories:
-  - 'network'
-  - 'terminal'
+  - 'cisco'
 tags:
   - 'cisco'
   - 'password'

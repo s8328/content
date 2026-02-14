@@ -7,8 +7,7 @@ title: 'Cisco: Загрузка и выгрузка конфигурации'
 description: ''
 icon: 'far fa-file-lines'
 categories:
-  - 'network'
-  - 'terminal'
+  - 'cisco'
 tags:
   - 'cisco'
 authors:
