@@ -55,7 +55,7 @@ draft: 0
 - Импортировать сертификаты:
 
 ```text
-/certificate import file-name="ros.cacert.pem" passphrase="" name="CA"
+/certificate import file-name="ros.cacert.pem" passphrase="" name="ROS.CA"
 ```
 
 ## Настройка DoH
