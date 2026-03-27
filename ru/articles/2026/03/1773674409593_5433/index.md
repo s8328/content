@@ -47,28 +47,28 @@ draft: 0
 
 ## Создание
 
-- Сделать бинарную резервную копию конфигурации с именем `GW1.2026.03.16.00.backup` на `flash`:
+- Сделать бинарную резервную копию конфигурации с именем `SERIAL_NUMBER.2026-03-16.backup` на `flash`:
 
 ```
-/system backup save dont-encrypt=yes name="/flash/GW1.2026.03.16.00.backup"
+:local sn [/system routerboard get serial-number]; :local date [/system clock get date]; /system backup save dont-encrypt=yes name="/flash/$sn.$date"
 ```
 
-- Сделать бинарную резервную копию конфигурации с именем `GW1.2026.03.16.00.backup` на `sd1`:
+- Сделать бинарную резервную копию конфигурации с именем `SERIAL_NUMBER.2026-03-16.backup` на `sd1`:
 
 ```
-/system backup save dont-encrypt=yes name="/sd1/GW1.2026.03.16.00.backup"
+:local sn [/system routerboard get serial-number]; :local date [/system clock get date]; /system backup save dont-encrypt=yes name="/sd1/$sn.$date"
 ```
 
-- Сделать бинарную резервную копию конфигурации с именем `GW1.2026.03.16.00.backup` на `sd1-part3` из статьи {{< uuid "4b37dd8e-a96f-5ba0-bb2a-96da70bb3942" >}}:
+- Сделать бинарную резервную копию конфигурации с именем `SERIAL_NUMBER.2026-03-16.backup` на `sd1-part3` из статьи {{< uuid "4b37dd8e-a96f-5ba0-bb2a-96da70bb3942" >}}:
 
 ```
-/system backup save dont-encrypt=yes name="/sd1-part3/GW1.2026.03.16.00.backup"
+:local sn [/system routerboard get serial-number]; :local date [/system clock get date]; /system backup save dont-encrypt=yes name="/sd1-part3/$sn.$date"
 ```
 
-- Сделать зашифрованную бинарную резервную копию конфигурации с именем `GW1.2026.03.16.00.backup` на `flash` с паролем `pa$$word`:
+- Сделать зашифрованную бинарную резервную копию конфигурации с именем `SERIAL_NUMBER.2026-03-16.backup` на `flash` с паролем `pa$$word`:
 
 ```
-/system backup save name="/flash/GW1.2026.03.16.00.backup" password="pa$$word"
+:local sn [/system routerboard get serial-number]; :local date [/system clock get date]; /system backup save name="/flash/$sn.$date" password="pa$$word"
 ```
 
 ## Восстановление
