@@ -46,17 +46,7 @@ draft: 0
 
 ## Установка набора сертификатов
 
-- Скачать пакет сертификатов с сайта `curl.se`:
-
-```text
-/tool fetch url="https://curl.se/ca/cacert.pem" dst-path="ros.cacert.pem"
-```
-
-- Импортировать сертификаты:
-
-```text
-/certificate import file-name="ros.cacert.pem" passphrase="" name="ROS.CA"
-```
+Установить набор сертификатов можно при помощи статьи {{< uuid "cc13623b-970c-5950-867e-168f9ba9025a" >}}.
 
 ## Настройка DoH
 
